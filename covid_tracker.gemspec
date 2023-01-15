@@ -6,7 +6,7 @@ Gem::Specification.new do |spec|
   spec.name = "covid_tracker"
   spec.version = CovidTracker::VERSION
   spec.authors = ["Crystal Campbell"]
-  spec.email = ["github/leeloomina"]
+  spec.email = ["2799044+LeelooMina@users.noreply.github.com"]
 
   spec.summary = ""
   spec.description = "."
