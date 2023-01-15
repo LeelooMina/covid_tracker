@@ -1,12 +1,21 @@
-require 'bcrypt'
+require "bcrypt"
+require "pry"
 
 module Auth
-    def self.create_hash_digest(password)
-        Bcrypt::Password.create(password)
+  def create_hash_digest(password)
+    BCrypt::Password.create(password)
+  end
+
+  def self.authenticate_user(users, username, password)
+    currUser = nil
+    users.each do |user|
+      if user.username == username && user.password == password
+        # legged in successfully!
+        currUser = user
+        break;
+      end
     end
 
-    
+    currUser
+  end
 end
-
-
-

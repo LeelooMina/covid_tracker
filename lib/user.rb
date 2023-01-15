@@ -1,40 +1,38 @@
-require 'pry'
+require "pry"
+require_relative "auth.rb"
 
 class User
-attr_accessor :id, :username, :password
+  extend Auth
+  attr_accessor :id, :username, :password
 
-@@users = []
+  @@users = []
 
-    def initialize(username, password)
-        @username = username
-        @password = password
-        @id = User.all.count + 1
-        @@users << self
-    end
+  def initialize(username, password)
+    @username = username
+    @password = password
+    @id = User.all.count + 1
+    @@users << self
+  end
 
-    # reutnbr all users from users array
-    def self.all
-        @@users
-    end
+  # reutnbr all users from users array
+  def self.all
+    @@users
+  end
 
+  # populate the users array
+  def self.seed
+    users = [{ username: "john123", password: "password" }, { username: "amy123", password: "password" }]
 
-    # populate the users array
-    def self.seed 
-        users = [{username: "john123", password: "password"}, {username: "amy123", password: "password"}]
-    
+    i = 0
 
-i = 0
-
-while i < users.count
-    user = users[i]
-    User.new(user[:username], user[:password])
-    i += 1
+    while i < users.count
+      user = users[i]
+      User.new(user[:username], create_hash_digest(user[:password]))
+      i += 1
     end
 
     def self.find(id)
-        self.all.find { |user| user.id == id}
+      self.all.find { |user| user.id == id }
     end
+  end
 end
-
-end
-
