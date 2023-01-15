@@ -1,0 +1,10 @@
+
+[1mFrom:[0m /home/leeloo/github/usa_covid_19_tracker/covid_tracker/lib/scraper.rb:19 :
+
+    [1;34m14[0m: 
+    [1;34m15[0m:     [32mend[0m
+    [1;34m16[0m: 
+    [1;34m17[0m: [32mend[0m
+    [1;34m18[0m: 
+ => [1;34m19[0m: binding.pry
+
