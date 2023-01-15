@@ -17,7 +17,6 @@ class Scraper
     
         Country.new("USA", usa_confirmed_cases, usa_overall_deaths, usa_recoveries)
 
-        binding.pry
     end
 
     def self.scrape_states
@@ -25,7 +24,5 @@ class Scraper
     end
 
 end
-
-binding.pry
 
 
